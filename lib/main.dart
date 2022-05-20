@@ -1,18 +1,27 @@
-import 'package:dex_team_builder/pages/pokedex_page.dart';
 import 'package:dex_team_builder/repositories/pokemon_species_repository.dart';
 import 'package:dex_team_builder/repositories/pokemon_repository.dart';
+import 'package:dex_team_builder/services/auth_service.dart';
+import 'package:dex_team_builder/widgets/auth_check.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(MultiProvider(
     providers: [
+      ChangeNotifierProvider<AuthService>(create: (_) => AuthService()),
       ChangeNotifierProvider<PokemonSpeciesRepository>(
-        create: (_) => PokemonSpeciesRepository(),
-      ),
+          create: (_) => PokemonSpeciesRepository()),
       ChangeNotifierProvider<PokemonRepository>(
-        create: (_) => PokemonRepository(),
-      )
+          create: (context ) => PokemonRepository(auth: context.read<AuthService>(),)),
+      
     ],
     child: const MyApp(),
   ));
@@ -38,7 +47,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.red,
       ),
-      home: const PokedexPage(),
+      home: AuthCheck(),
     );
   }
 }

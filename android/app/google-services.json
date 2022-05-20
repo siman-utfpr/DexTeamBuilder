@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "424445161953",
+    "project_id": "dex-team-builder",
+    "storage_bucket": "dex-team-builder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424445161953:android:5b40921fb5227acceb62a0",
+        "android_client_info": {
+          "package_name": "com.example.dex_team_builder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424445161953-h59f252dbd9iaoc4od6vkfmr82uu9b9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD39mcAi_QsMyH-naaCNW8gRet7-wcuJmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424445161953-h59f252dbd9iaoc4od6vkfmr82uu9b9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

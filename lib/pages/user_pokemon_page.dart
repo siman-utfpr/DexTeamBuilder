@@ -52,6 +52,10 @@ class _UserPokemonPage extends State<UserPokemonPage> {
                       ),
                     ),
                   ),
+                  trailing: IconButton(
+                    icon: Icon(Icons.delete),
+                    onPressed: () => pokemonRepository.remove(pokemonsList[index]),
+                  ),
                   title: Text(
                       '#${pokemonsList[index].id} - ${pokemonsList[index].name}: ${pokemonsList[index].nickname}'),
                   subtitle: Row(
